@@ -1,3 +1,9 @@
+variable "create_org" {
+  description = "A flag defining whether to create an organization or not. Useful, if you want to have a separate module for nested Organizational Units (OUs)"
+  type        = bool
+  default     = true
+}
+
 variable "feature_set" {
   description = "After the Terraform docs: 'Specify ALL (default) or CONSOLIDATED_BILLING.'"
   default     = "ALL"
