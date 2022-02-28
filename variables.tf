@@ -14,3 +14,14 @@ variable "enabled_policy_types" {
   type        = list(string)
   default     = null
 }
+
+variable "ou_name" {
+  description = "After the Terraform docs: 'The name for the organizational unit'"
+  type        = string
+}
+
+variable "parent_id" {
+  description = "The identifier (ID) of the parent organizational unit. If not specified, the root account is used"
+  type        = string
+  default     = null
+}
