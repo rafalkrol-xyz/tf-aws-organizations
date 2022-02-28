@@ -7,6 +7,6 @@ resource "aws_organizations_organization" "org" {
 resource "aws_organizations_organizational_unit" "ou" {
   count = length(var.organizational_units)
 
-  name      = var.organizational_units[count.index].ou_name
+  name      = var.organizational_units[count.index].name
   parent_id = var.organizational_units[count.index].parent_id == null ? aws_organizations_organization.org.roots.0.id : var.parent_id
 }

@@ -16,20 +16,10 @@ variable "enabled_policy_types" {
 }
 
 variable "organizational_units" {
+  description = "A list of Organizational Units (OUs) to be created."
   type = list(object({
-    ou_name   = string
+    name      = string
     parent_id = optional(string)
   }))
   default = null
 }
-
-# variable "ou_name" {
-#   description = "After the Terraform docs: 'The name for the organizational unit'"
-#   type        = string
-# }
-
-# variable "parent_id" {
-#   description = "The identifier (ID) of the parent organizational unit. If not specified, the root account is used"
-#   type        = string
-#   default     = null
-# }
