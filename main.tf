@@ -11,5 +11,5 @@ resource "aws_organizations_organizational_unit" "ou" {
 
   name = var.organizational_units[count.index].name
   # NB the below will fail, by design, if the parent_id is missing and var.create_org is set to false
-  parent_id = var.organizational_units[count.index].parent_id != null ? var.organizational_units[count.index].parent_id : aws_organizations_organization.0.org.roots.0.id
+  parent_id = var.organizational_units[count.index].parent_id != null ? var.organizational_units[count.index].parent_id : aws_organizations_organization.org.0.org.roots.0.id
 }
