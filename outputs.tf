@@ -5,6 +5,5 @@ output "org" {
 
 output "ou_ids" {
   description = "The identifiers (IDs) of the Organizational Unit(s) (OU) if created"
-  type        = list(string)
   value       = aws_organizations_organizational_unit.ou.*.id
 }
