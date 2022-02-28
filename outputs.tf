@@ -13,7 +13,7 @@ output "roots" {
   value       = aws_organizations_organization.org.roots
 }
 
-output "org" {
-  description = "The whole organization object as defined in the Terraform docs: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_organization#attributes-reference"
-  value       = aws_organizations_organization.org
-}
+# output "org" {
+#   description = "The whole organization object as defined in the Terraform docs: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_organization#attributes-reference"
+#   value       = aws_organizations_organization.org
+# }
