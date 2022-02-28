@@ -4,6 +4,6 @@ output "org" {
 }
 
 output "ou_ids" {
-  description = "The identifiers (IDs) of the Organizational Unit(s) (OU) if created"
-  value       = aws_organizations_organizational_unit.ou.*.id
+  description = "A map of Organizational Units (OUs) names and their identifiers (IDs)"
+  value       = zipmap(aws_organizations_organizational_unit.ou.*.name, aws_organizations_organizational_unit.ou.*.id)
 }
