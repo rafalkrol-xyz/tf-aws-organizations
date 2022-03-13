@@ -151,5 +151,5 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_org"></a> [org](#output\_org) | The whole organization object as described in the Terraform docs: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/organizations_organization#attributes-reference |
-| <a name="output_ou_ids"></a> [ou\_ids](#output\_ou\_ids) | The identifiers (IDs) of the Organizational Unit(s) (OU) if created |
+| <a name="output_ou_ids"></a> [ou\_ids](#output\_ou\_ids) | A map of Organizational Units (OUs) names and their identifiers (IDs) |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
