@@ -2,8 +2,8 @@
 
 ## Overview
 
-This is a parametrized [Terraform module](https://learn.hashicorp.com/tutorials/terraform/module) for creating [AWS Organizations resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)
-such as [the organization itself, Organizational Units (OUs) and accounts](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html).
+This is a parametrized [Terraform module](https://learn.hashicorp.com/tutorials/terraform/module) for creating [AWS Organizations resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html),
+namely [the organization itself and Organizational Units (OUs)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html).
 
 ## Prerequisites
 
@@ -48,7 +48,6 @@ pre-commit run -a
 ## Usage
 
 ```terraform
-TODO: add accounts!!!!
 module "root" {
   source = "git@github.com:rafalkrol-xyz/tf-aws-organizations.git?ref=init"
   enabled_policy_types = ["SERVICE_CONTROL_POLICY"]
