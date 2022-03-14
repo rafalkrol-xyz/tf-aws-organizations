@@ -49,7 +49,7 @@ pre-commit run -a
 
 ```terraform
 module "root" {
-  source = "git@github.com:rafalkrol-xyz/tf-aws-organizations.git?ref=init"
+  source               = "git@github.com:rafalkrol-xyz/tf-aws-organizations.git?ref=v1.0.0"
   enabled_policy_types = ["SERVICE_CONTROL_POLICY"]
   aws_service_access_principals = [
     "cloudtrail.amazonaws.com",
@@ -58,16 +58,16 @@ module "root" {
   ]
   organizational_units = [
     {
-      name      = "core"
+      name = "core"
     },
     {
-      name      = "workloads"
+      name = "workloads"
     },
   ]
 }
 
 module "nested" {
-  source = "git@github.com:rafalkrol-xyz/tf-aws-organizations.git?ref=init"
+  source     = "git@github.com:rafalkrol-xyz/tf-aws-organizations.git?ref=v1.0.0"
   create_org = false
   organizational_units = [
     {
@@ -85,7 +85,6 @@ The functionality replaces the now redundant per-resource tags configurations, a
 Instead, set the default tags in your parent module:
 
 ```terraform
-FIXME: update the below!!!
 ### PARENT MODULE - START
 locals {
   tags = {
@@ -103,12 +102,22 @@ provider "aws" {
 }
 
 # NB the default tags are implicitly passed into the module: https://registry.terraform.io/providers/hashicorp/aws/latest/docs#default_tags
-module "break_glass" {
-  source        = "git@github.com:rafalkrol-xyz/tf-aws-iam-user.git?ref=v1.0.0"
-  name          = "break-glass"
-  groups        = [aws_iam_group.administrators.name]
-  force_destroy = true
-  pgp_key       = "keybase:YOUR_KEYBASE_USERNAME" # Either a base-64 encoded PGP public key, or a keybase username in the form keybase:username.
+module "root" {
+  source               = "git@github.com:rafalkrol-xyz/tf-aws-organizations.git?ref=v1.0.0"
+  enabled_policy_types = ["SERVICE_CONTROL_POLICY"]
+  aws_service_access_principals = [
+    "cloudtrail.amazonaws.com",
+    "config.amazonaws.com",
+    "member.org.stacksets.cloudformation.amazonaws.com",
+  ]
+  organizational_units = [
+    {
+      name = "core"
+    },
+    {
+      name = "workloads"
+    },
+  ]
 }
 ### PARENT MODULE - END
 ```
