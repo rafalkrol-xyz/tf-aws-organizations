@@ -1,3 +1,14 @@
+## [1.0.1](https://github.com/rafalkrol-xyz/tf-aws-organizations/compare/v1.0.0...v1.0.1) (2023-02-11)
+
+
+### Docs
+
+* correct examples ([dd0d0c9](https://github.com/rafalkrol-xyz/tf-aws-organizations/commit/dd0d0c9b142ca714d6dbd98d3357b3f1123a27ca))
+
+### Fix
+
+* use the latest version ([b849279](https://github.com/rafalkrol-xyz/tf-aws-organizations/commit/b8492798e3acd46304ce94bd2ec2d5dfb2454a8c))
+
 # 1.0.0 (2022-03-13)
 
 
