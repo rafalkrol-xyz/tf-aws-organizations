@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/rafalkrol-xyz/tf-aws-organizations/compare/v1.0.1...v1.0.2) (2023-02-11)
+
+
+### Fix
+
+* from TF v1.3. this is supported natively ([bbd5b7c](https://github.com/rafalkrol-xyz/tf-aws-organizations/commit/bbd5b7c29e9e5bf775b237af16ac72911945a8b4))
+
 ## [1.0.1](https://github.com/rafalkrol-xyz/tf-aws-organizations/compare/v1.0.0...v1.0.1) (2023-02-11)
 
 
